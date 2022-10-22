@@ -29,8 +29,9 @@ public class LoginPage {
     @FindBy(xpath = "//*[text() = 'Reset Password']")
     public WebElement resetBtnLink;
 
-    @FindBy(xpath = "//*[@id='login']")
-    public WebElement loginInput;
+
+  
+   
 
 
 
