@@ -39,5 +39,12 @@ public class LoginPage {
         loginButton.click();
     }
 
+    public void login2(){
+        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
+        usernameInput.sendKeys("salesmanager10@info.com");
+        passwordInput.sendKeys("salesmanager");
+        loginButton.click();
+    }
+
 
 }

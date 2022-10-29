@@ -9,12 +9,13 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         plugin = {
                 "html:target/cucumber-reports.html",
+                "json:target/cucumber.json",
                 "me.jvt.cucumber.report.PrettyReports:target/cucumber"
         },
         features = "src/test/resources/features",
         glue = "com/centrilli/stepDefinitions",
         dryRun= false,
-        tags = "@wip"
+        tags = "@CENT-1360"
 )
 public class CukesRunner {
 }
