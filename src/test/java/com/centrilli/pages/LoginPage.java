@@ -32,9 +32,6 @@ public class LoginPage {
     public WebElement resetBtnLink;
 
 
-
-
-
     public void login(){
         Driver.getDriver().get(ConfigurationReader.getProperty("url"));
         usernameInput.sendKeys("posmanager10@info.com");

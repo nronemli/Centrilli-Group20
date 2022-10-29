@@ -50,4 +50,50 @@ public class SurveysPage {
     @FindBy(xpath = "(//a[@data-toggle='tab'])[3]")
     public WebElement answers;
 
+    @FindBy(xpath = "(//p)[2]")
+    public WebElement actualTitle;
+
+    @FindBy(xpath = "//div[@class='o_notification_title']//span")
+    public WebElement notificationMessageTitle;
+
+    @FindBy(xpath = "//button[@accesskey='j']")
+    public WebElement discardButton;
+
+   // (//div[@id='modal_34']//button[@type='button'])[2]//span
+    @FindBy(xpath = "//*[contains(text(),'Ok')]")
+    public WebElement okWarningButton;
+
+    @FindBy(xpath = "//ol[@class='breadcrumb']//li")
+    public WebElement surveysTitle;
+
+    @FindBy(xpath = "//input[@class='o_searchview_input']")
+    public WebElement seachBar;
+
+    @FindBy(xpath = "//span[@class='o_column_title']")
+    public WebElement permanantButton;
+
+    @FindBy(xpath = "//div[@data-id='4']//span[.='What is GitHub used for?']")
+    public WebElement newSurveyName;
+
+    @FindBy(xpath = "//button[@accesskey='l']")
+    public WebElement listButton;
+
+    @FindBy(xpath = "//button[@accesskey='k']")
+    public WebElement kanbanButton;
+
+    @FindBy(xpath = "//div[@class='table-responsive']//table//tr//th[2]")
+    public WebElement listVerificationTitle;
+
+    @FindBy(xpath = "//a[.='Surveys']")
+    public WebElement surveysButton;
+
+    @FindBy(xpath = "//span[@class='o_pager_limit']")
+    public WebElement pageCounter;
+
+    public int pageCounter(){
+        String pageCounterStorage= pageCounter.getText();
+        int x = Integer.parseInt(pageCounterStorage);
+        return x;
+    }
+
 }
