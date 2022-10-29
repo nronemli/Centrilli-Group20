@@ -84,7 +84,7 @@ public class SurveysPage {
     @FindBy(xpath = "//div[@class='table-responsive']//table//tr//th[2]")
     public WebElement listVerificationTitle;
 
-    @FindBy(xpath = "//a[.='Surveys']")
+    @FindBy(xpath = "(//*[contains(text(),'Surveys')])[3]")
     public WebElement surveysButton;
 
     @FindBy(xpath = "//span[@class='o_pager_limit']")

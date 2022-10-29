@@ -1,7 +1,6 @@
 package com.centrilli.stepDefinitions;
 
 import com.centrilli.pages.BasePage;
-import com.centrilli.pages.LoginPage;
 import com.centrilli.pages.SurveysPage;
 import com.centrilli.utilities.BrowserUtil;
 import com.centrilli.utilities.Driver;
@@ -9,22 +8,18 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
+
 
 public class SurveysPage_StepDefinitions extends BasePage {
 
     BasePage basePage = new BasePage();
     SurveysPage surveysPage = new SurveysPage();
-    LoginPage loginPage =new LoginPage();
 
     public String newCounter;
 
     @When("User clicks on Surveys module")
     public void user_clicks_on_surveys_module() {
-        //loginPage.login();
         basePage.SurveysButton.click();
         BrowserUtil.sleep(2);
     }
@@ -99,11 +94,11 @@ public class SurveysPage_StepDefinitions extends BasePage {
     @Then("User clicks save button and should see surveys created")
     public void user_clicks_save_button_and_should_see_surveys_created() {
         surveysPage.saveButton.click();
-        BrowserUtil.sleep(3);
+        BrowserUtil.sleep(1);
         String expectedTitle = "Survey created";
         String actualTitle = surveysPage.actualTitle.getText();
         Assert.assertEquals("Survey title didnt match", actualTitle, expectedTitle);
-
+        Driver.closeDriver();
     }
 
 
@@ -111,6 +106,7 @@ public class SurveysPage_StepDefinitions extends BasePage {
     public void userClicksSaveButtonToSeeTheErrorMessage() {
         surveysPage.saveButton.click();
         Assert.assertTrue(surveysPage.notificationMessageTitle.isDisplayed());
+        Driver.closeDriver();
     }
 
     @And("user clicks Discard button")
@@ -129,6 +125,7 @@ public class SurveysPage_StepDefinitions extends BasePage {
         String expectedTitle = "Surveys";
         String actualTitle = surveysPage.surveysTitle.getText();
         Assert.assertEquals("Title as expected", expectedTitle, actualTitle);
+        Driver.closeDriver();
     }
 
     @Then("User clicks save and see the title changed to {string}")
@@ -138,6 +135,7 @@ public class SurveysPage_StepDefinitions extends BasePage {
         String actualTitle = Driver.getDriver().getTitle();
         System.out.println("Driver.getDriver().getTitle() = " + Driver.getDriver().getTitle());
         Assert.assertTrue(actualTitle.contains(arg0));
+        Driver.closeDriver();
     }
 
 
@@ -156,8 +154,8 @@ public class SurveysPage_StepDefinitions extends BasePage {
         String expectedSurveyName = "What is GitHub used for?";
         String actualSurveyName = surveysPage.newSurveyName.getText();
         Assert.assertTrue(actualSurveyName.contains(expectedSurveyName));
+        Driver.closeDriver();
     }
-
 
     @And("User clicks on list button")
     public void userClicksOnListButton() {
@@ -170,11 +168,13 @@ public class SurveysPage_StepDefinitions extends BasePage {
         surveysPage.kanbanButton.click();
         surveysPage.permanantButton.click();
         Assert.assertTrue(surveysPage.permanantButton.isDisplayed());
+        Driver.closeDriver();
     }
 
     @When("User clicks on Surveys module and click list to verify number")
     public void userClicksOnSurveysModuleAndClickListToVerifyNumber() {
-        surveysPage.surveysButton.click();
+        basePage.SurveysButton.click();
+        BrowserUtil.sleep(2);
         surveysPage.listButton.click();
         BrowserUtil.sleep(1);
         int changeToInt=Integer.parseInt(surveysPage.pageCounter.getText()) + 1;
@@ -184,17 +184,22 @@ public class SurveysPage_StepDefinitions extends BasePage {
 
     @And("user clicks surveys button")
     public void userClicksSurveysButton() {
-        surveysPage.surveysButton.click();
+        BrowserUtil.sleep(2);
+        basePage.SurveysButton.click();
     }
 
     @Then("user click list and number increased by one")
     public void userClickListAndNumberIncreasedByOne() {
-        surveysPage.surveysButton.click();
         surveysPage.listButton.click();
         BrowserUtil.sleep(1);
         String pageCounter = surveysPage.pageCounter.getText(); //108
         BrowserUtil.sleep(1);
         Assert.assertEquals("Numbers DONT match", newCounter,pageCounter);
+        Driver.closeDriver();
     }
 
+    @And("User clicks save button")
+    public void userClicksSaveButton() {
+        surveysPage.saveButton.click();
+    }
 }

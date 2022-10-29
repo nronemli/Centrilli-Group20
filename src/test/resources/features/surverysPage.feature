@@ -24,7 +24,6 @@ Feature: Surveys Functionality
       | Survey title                 | Page Title | Question Name            | choices                                                                 | choices2                                                 |
       | Group20-Collaboration Survey | Github     | What is GitHub used for? | GitHub is a code hosting platform for version control and collaboration | Github is a DevOps tool used for source code management. |
 
-
   Scenario Template: Verify that user cannot create a survey without typing title (empty title)
     When User clicks on Surveys module
     And User clicks create button
@@ -89,12 +88,11 @@ Feature: Surveys Functionality
     And User clicks on list button
     Then user clicks on kanban button
 
-
   Scenario Template: Verify that the number of surveys increased 1
     When User clicks on Surveys module and click list to verify number
     And User clicks create button
     And User enters "<Survey title>"
-    And User clicks save button and should see surveys created
+    And User clicks save button
     And user clicks surveys button
     Then user click list and number increased by one
 
