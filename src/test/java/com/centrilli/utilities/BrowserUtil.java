@@ -88,6 +88,15 @@ public class BrowserUtil {
         }
     }
 
+    /**
+     * This method will accept a webElement to visible
+     * @param webElement
+     */
 
+    public static void waitForVisibility(WebElement webElement) {
+        Driver.getDriver().manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
+        wait.until(ExpectedConditions.visibilityOf(webElement));
+    }
 
 }

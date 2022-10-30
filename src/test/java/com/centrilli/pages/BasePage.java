@@ -50,7 +50,7 @@ public class BasePage {
     @FindBy(xpath = "//span[normalize-space(text()) = 'Events']")
     public WebElement EventsButton;
 
-    @FindBy(xpath = "//span[normalize-space(text()) = 'Surveys']")
+    @FindBy(xpath = "(//*[contains(text(),'Surveys')])[1]")
     public WebElement SurveysButton;
 
     @FindBy(xpath = "//span[normalize-space(text()) = 'Employees']")
