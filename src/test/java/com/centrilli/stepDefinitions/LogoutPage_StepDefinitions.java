@@ -31,7 +31,6 @@ public class LogoutPage_StepDefinitions {
         logoutPage.dropdownLogout.click();
     }
 
-
     @When("user is logged out")
     public void userIsLoggedOut() {
         loginPage.login();
