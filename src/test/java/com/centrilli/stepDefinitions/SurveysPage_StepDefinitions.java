@@ -22,6 +22,7 @@ public class SurveysPage_StepDefinitions extends BasePage {
     public void user_clicks_on_surveys_module() {
         basePage.SurveysButton.click();
         BrowserUtil.sleep(2);
+
     }
 
     @When("User clicks create button")
@@ -96,8 +97,9 @@ public class SurveysPage_StepDefinitions extends BasePage {
         surveysPage.saveButton.click();
         BrowserUtil.sleep(1);
         String expectedTitle = "Survey created";
-        String actualTitle = surveysPage.actualTitle.getText();
+        String actualTitle = surveysPage.surveyCreatedMsg.getText();
         Assert.assertEquals("Survey title didnt match", actualTitle, expectedTitle);
+        BrowserUtil.sleep(2);
         Driver.closeDriver();
     }
 
@@ -177,6 +179,7 @@ public class SurveysPage_StepDefinitions extends BasePage {
         BrowserUtil.sleep(2);
         surveysPage.listButton.click();
         BrowserUtil.sleep(1);
+
         int changeToInt=Integer.parseInt(surveysPage.pageCounter.getText()) + 1;
         newCounter = Integer.toString(changeToInt);
     }
@@ -192,7 +195,7 @@ public class SurveysPage_StepDefinitions extends BasePage {
     public void userClickListAndNumberIncreasedByOne() {
         surveysPage.listButton.click();
         BrowserUtil.sleep(1);
-        String pageCounter = surveysPage.pageCounter.getText(); //108
+        String pageCounter = surveysPage.pageCounter.getText();
         BrowserUtil.sleep(1);
         Assert.assertEquals("Numbers DONT match", newCounter,pageCounter);
         Driver.closeDriver();
