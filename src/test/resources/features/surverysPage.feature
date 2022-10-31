@@ -1,4 +1,4 @@
-@wip
+
 Feature: Surveys Functionality
 
   Background: User is logged in
