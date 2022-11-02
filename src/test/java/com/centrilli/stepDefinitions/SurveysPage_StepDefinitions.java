@@ -22,7 +22,6 @@ public class SurveysPage_StepDefinitions extends BasePage {
     public void user_clicks_on_surveys_module() {
         basePage.SurveysButton.click();
         BrowserUtil.sleep(2);
-
     }
 
     @When("User clicks create button")
@@ -102,7 +101,6 @@ public class SurveysPage_StepDefinitions extends BasePage {
         BrowserUtil.sleep(2);
         Driver.closeDriver();
     }
-
 
     @Then("user clicks save button to see the error message")
     public void userClicksSaveButtonToSeeTheErrorMessage() {
