@@ -1,4 +1,4 @@
-@wip
+
 Feature: Inventory Functionality
   As a user (posmanager) I should be able to create a new product, search and view the products that I have created,
   display the products with different styles and see the total number of different types of products I have.
