@@ -74,6 +74,9 @@ public class BasePage {
     @FindBy(xpath = "//span[normalize-space(text()) = 'Dashboard']")
     public WebElement DashboardButton;
 
+    @FindBy(xpath = "//span[normalize-space(text()) = 'Vehicles Fuel Logs']")
+    public WebElement VehicleFuelLogsButton;
+
 
 
 
