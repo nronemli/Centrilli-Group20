@@ -7,6 +7,7 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -68,6 +69,43 @@ public class VehicleCostPage {
     @FindBy(xpath = "//th[text()='Vehicle']")
     public WebElement vehicleElementInCreatePage;
 
+    @FindBy(xpath = "//button[contains(text(),'Attachment(s)')]")
+    public WebElement attachmentsButton;
+
+    @FindBy(xpath = "//button[contains(text(),'Action')]")
+    public WebElement actionButton;
+
+    @FindBy(xpath = "//input[contains(@class,'searchview_input')]")
+    public WebElement vehicleCostSearchInput;
+
+    @FindBy(xpath = "//div[@class='table-responsive']/table/tbody/tr[1]/th")
+    public WebElement firstVehicLeResultTextElement;
+
+    @FindBy(xpath = "//th[text()='Cost Description']")
+    public WebElement costDescElement;
+
+    @FindBy (xpath = "(//i[contains(@class,'plus')])[1]")
+    public WebElement kanbanPlusElement;
+
+    @FindBy(xpath = "//button[contains(text(),'Measures')]")
+    public WebElement graphMeasuresElement;
+
+    @FindBy(xpath = "//div[contains(@class,'switch_buttons')]/button[1]")
+    public WebElement listButton;
+
+    @FindBy(xpath = "//div[contains(@class,'switch_buttons')]/button[2]")
+    public WebElement kanbanButton;
+
+    @FindBy(xpath = "//div[contains(@class,'switch_buttons')]/button[3]")
+    public WebElement graphButton;
+
+
+
+
+
+
+
+
     WebDriverWait wait = new WebDriverWait(Driver.getDriver(),10);
     String vehicle= "Audi/A1/";
     String type= "Summer tires";
@@ -75,6 +113,8 @@ public class VehicleCostPage {
     String date ="03/01/2023";
 
     String totalPrice="150.00";
+
+    int vehicleCostCount;
     public void gotoVehicleCostPage(){
 
 
@@ -241,7 +281,71 @@ public class VehicleCostPage {
     }
 
 
+    public void attachmentsAndActionButtonDisplayed(){
 
+        BrowserUtil.waitForVisibility(attachmentsButton);
+        Assert.assertTrue(attachmentsButton.isDisplayed());
+        Assert.assertTrue(actionButton.isDisplayed());
+    }
+
+
+
+    public void selectVehicleCostAndSearchValue(){
+
+        moreButton.click();
+        BrowserUtil.sleep(5);
+        fleetButton.click();
+        vehicleCostButton.click();
+
+        vehicleCostSearchInput.sendKeys(vehicle,Keys.ENTER);
+        String vehicleCountText= firstVehicLeResultTextElement.getText(); //Audi/A1/    (479)
+        String firstCount= vehicleCountText.substring(10,(vehicleCountText.length()-1));
+
+        vehicleCostCount= Integer.parseInt(firstCount);
+
+
+    }
+
+
+    public void verifyNewVehicleCount(){
+
+        vehicleCostButton.click();
+        BrowserUtil.waitForVisibility(vehicleCostSearchInput);
+
+        vehicleCostSearchInput.sendKeys(vehicle,Keys.ENTER);
+        String vehicleCountText= firstVehicLeResultTextElement.getText(); //Audi/A1/    (479)
+        String firstCount= vehicleCountText.substring(10,(vehicleCountText.length()-1));
+
+
+       int newVehicleCostCount= Integer.parseInt(firstCount);
+        System.out.println("Old vehicle Cost count: "+ vehicleCostCount);
+        System.out.println("New Vehicle Cost Count : "+ newVehicleCostCount);
+
+       Assert.assertEquals("New vehicle is not created ",(vehicleCostCount+1),newVehicleCostCount);
+    }
+
+
+    public void verifyVehicleCostDisplayInListKanbanGraph(){
+
+        Actions action = new Actions(Driver.getDriver());
+        vehicleCostButton.click();
+        //listButton.click();
+        Assert.assertTrue(costDescElement.isDisplayed());
+
+
+        BrowserUtil.sleep(2);
+        action.moveToElement(kanbanButton).doubleClick().build().perform();
+
+        //kanbanButton.click();
+        BrowserUtil.waitForVisibility(kanbanPlusElement);
+        Assert.assertTrue(kanbanPlusElement.isDisplayed());
+
+        action.moveToElement(graphButton).doubleClick().build().perform();
+        //graphButton.click();
+        BrowserUtil.waitForVisibility(graphMeasuresElement);
+        Assert.assertTrue(graphMeasuresElement.isDisplayed());
+
+    }
 
 
 
