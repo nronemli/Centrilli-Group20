@@ -61,6 +61,30 @@ public class VehicleCostStepDefinitions {
 
     }
 
+    @Then("User verify Attachments and Action button is displayed")
+    public void user_verify_attachments_and_action_button_is_displayed() {
+        vc.attachmentsAndActionButtonDisplayed();
+    }
+
+
+    @When("User click More tab on the right top side and click Fleet then select Vehicle Cost Page then take the vehicle count")
+    public void user_click_more_tab_on_the_right_top_side_and_click_fleet_then_select_vehicle_cost_page_then_take_the_vehicle_count() {
+
+
+        vc.selectVehicleCostAndSearchValue();
+    }
+    @Then("User verify that the Vehicle cost  value is increased by one after creating new vehicle cost")
+    public void user_verify_that_the_vehicle_cost_value_is_increased_by_one_after_creating_new_vehicle_cost() {
+
+        vc.verifyNewVehicleCount();
+
+    }
+
+    @Then("User verify that the Vehicle Cost page can be displayed List, Kanban, Graph")
+    public void user_verify_that_the_vehicle_cost_page_can_be_displayed_list_kanban_graph() {
+
+        vc.verifyVehicleCostDisplayInListKanbanGraph();
+    }
 
 }
 
