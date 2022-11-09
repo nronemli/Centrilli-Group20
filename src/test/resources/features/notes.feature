@@ -1,5 +1,5 @@
 
-@CENT-1451
+@CENT-1451 @Regression
 Feature: User should be able to verify
   that notes module works succesfully
 
@@ -16,7 +16,7 @@ Feature: User should be able to verify
       And User clicks save button after write a note
       And Verify that user can create a note
 
-    @CENT-1447
+    @CENT-1447 @Smoke
     Scenario: Verify that the user can switch Kanban-List view
       Then User clicks note button
       And User clicks list button

@@ -3,7 +3,7 @@ Feature: Logout Functionality
 
   Background: User is logged in
     Given User is logged in the application
-
+  @Smoke
   Scenario:  User can log out and ends up in login page.
     When user clicks username
     And user clicks logout option
