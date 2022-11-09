@@ -39,7 +39,7 @@ Feature: Surveys Functionality
       | Page Title |
       | Github     |
 
-@CENT-1386
+  @CENT-1386
   Scenario Outline: Verify that user can cancel the process by clicking Discard button
     When User clicks on Surveys module
     And User clicks create button
