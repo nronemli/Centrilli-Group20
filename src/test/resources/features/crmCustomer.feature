@@ -1,10 +1,11 @@
-@wip
+@CENT-1419
 Feature: As a POS Manager I should be able to create CUSTOMER
 
   Background: User is logged in
     Given  User is logged in the application
 
-  Scenario Outline: User can create new CUSTOMER
+    @CENT-1452 @Smoke
+    Scenario Outline: User can create new CUSTOMER
     When User clicks on CRM module
     And User clicks on Customers
     And User clicks on Create button
@@ -17,12 +18,14 @@ Feature: As a POS Manager I should be able to create CUSTOMER
       | name       | address street   | email address       |  |
       | nur onemli | 123 cydeo street | nuronemli@cydeo.com |  |
 
-  Scenario: User can switch Kanban-List view
+     @CENT-1453
+     Scenario: User can switch Kanban-List view
     When User clicks on CRM module
     And User clicks on Customers
     Then user clicks to List button
     Then User clicks to Kanban button
 
+     @CENT-1454
   Scenario: User can discard changes
     When User clicks on CRM module
     And User clicks on Customers
@@ -32,7 +35,8 @@ Feature: As a POS Manager I should be able to create CUSTOMER
     And User clicks OK warning button
     Then User is on the CRM module
 
-  Scenario Outline: User can edit CUSTOMER
+       @CENT-1455
+       Scenario Outline: User can edit CUSTOMER
     When User clicks on CRM module and clicks customers
     And User searches for "<name>" name on search box
     And User clicks on found "<expected customer name>"
@@ -45,7 +49,8 @@ Examples: customer name
   | name       | expected customer name | new name     |
   | nur onemli | nur onemli             | Aynur Onemli |
 
-  Scenario: User can delete CUSTOMER
+         @CENT-1456
+         Scenario: User can delete CUSTOMER
     When User clicks on CRM module
     And User clicks on Customers
     And User clicks on Create button
