@@ -115,6 +115,8 @@ public class FleetConfigVehicleModelFunc_StepDefinitions {
         fleetConfigVehicleModelFuncPage.okButtonDiscardWarningPopup.click();
       //  BrowserUtil.sleep(3);
         fleetConfigVehicleModelFuncPage.cancelCreateMakePopup.click();
+
+
     }
 
     @Then("verify that User should back on the Vehicle Model page")
