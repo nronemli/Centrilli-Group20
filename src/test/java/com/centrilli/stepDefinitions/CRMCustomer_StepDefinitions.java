@@ -15,7 +15,7 @@ public class CRMCustomer_StepDefinitions extends BasePage {
 
     BasePage basePage = new BasePage();
     CRMCustomerPage crmCustomerPage = new CRMCustomerPage();
-    WebDriver driver;
+    String beforeCount;
     @When("User clicks on CRM module")
     public void user_clicks_on_crm_module() {
         basePage.CrmButton.click();
@@ -54,11 +54,11 @@ public class CRMCustomer_StepDefinitions extends BasePage {
     public void user_clicks_customers_save_button() {
         crmCustomerPage.btn_save.click();
         BrowserUtil.sleep(3);
-        String expectedTitle = Driver.getDriver().getTitle();
-        Assert.assertTrue(expectedTitle.contains("nur onemli"));
+        //using method to verify title
+        String title= Driver.getDriver().getTitle();
+        Assert.assertTrue(title.contains("nur onemli - Odoo"));
         Driver.closeDriver();
     }
-
 
     @And("User clicks to Kanban button")
     public void userClicksToKanbanButton() {
@@ -66,7 +66,6 @@ public class CRMCustomer_StepDefinitions extends BasePage {
         BrowserUtil.sleep(2);
         Driver.closeDriver();
     }
-
 
     @Then("user clicks to List button")
     public void userClicksToListButton() {
@@ -84,7 +83,6 @@ public class CRMCustomer_StepDefinitions extends BasePage {
     public void userClicksOKWarningButton() {
         crmCustomerPage.btn_Ok_Warning_Discard.click();
         BrowserUtil.sleep(2);
-
     }
 
     @Then("User is on the CRM module")
@@ -95,13 +93,12 @@ public class CRMCustomer_StepDefinitions extends BasePage {
 
     @And("User searches for {string} name on search box")
     public void userSearchesForNameOnSearchBox(String arg0) {
-        BrowserUtil.sleep(5);
+        BrowserUtil.sleep(3);
         crmCustomerPage.txt_searchBox.sendKeys(arg0+ Keys.ENTER);
     }
-
     @And("User clicks on found {string}")
     public void userClicksOnFound(String arg0) {
-       BrowserUtil.sleep(2);
+       BrowserUtil.sleep(4);
        crmCustomerPage.foundCustomer.click();
     }
 
@@ -129,6 +126,7 @@ public class CRMCustomer_StepDefinitions extends BasePage {
     public void userClicksSaveButtonCustomer() {
         crmCustomerPage.btn_save.click();
         BrowserUtil.sleep(4);
+        beforeCount = crmCustomerPage.newCustomerCounter.getText();
     }
 
     @Then("User sees edited {string}")
@@ -143,20 +141,18 @@ public class CRMCustomer_StepDefinitions extends BasePage {
         BrowserUtil.sleep(2);
     }
 
-    @And("User clicks delete button")
-    public void userClicksDeleteButton() {
-        crmCustomerPage.btn_delete_actions.click();
-    }
-
     @And("User clicks OK button")
     public void userClicksOKButton() {
         BrowserUtil.sleep(2);
         crmCustomerPage.btn_Ok_Confirmation.click();
+        BrowserUtil.sleep(2);
+        //assertion using custom method
+        Assert.assertEquals(beforeCount,crmCustomerPage.returnCustomerAfterCount());
     }
 
-    @And("User is on the customers page")
-    public void userIsOnTheCustomersPage() {
-        crmCustomerPage.btn_customers.click();
-
+    @And("User clicks delete button\\(customer)")
+    public void userClicksDeleteButtonCustomer() {
+        crmCustomerPage.btn_delete_actions.click();
+        BrowserUtil.sleep(3);
     }
 }

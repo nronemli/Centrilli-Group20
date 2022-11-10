@@ -1,4 +1,4 @@
-
+@wip
 Feature: As a POS Manager I should be able to create CUSTOMER
 
   Background: User is logged in
@@ -43,9 +43,8 @@ Feature: As a POS Manager I should be able to create CUSTOMER
 
 Examples: customer name
   | name       | expected customer name | new name     |
-  | Nur onemli | Nur onemli             | Aynur Onemli |
+  | nur onemli | nur onemli             | Aynur Onemli |
 
-@wip
   Scenario: User can delete CUSTOMER
     When User clicks on CRM module
     And User clicks on Customers
@@ -53,8 +52,8 @@ Examples: customer name
     And User enters "testing" name text box
     And User clicks save button(customer)
     And User clicks on actions drop down
-    And User clicks delete button
+    And User clicks delete button(customer)
     And User clicks OK button
-    And User is on the customers page
+
 
 
