@@ -1,10 +1,10 @@
-
+@Smoke
 Feature: User should be able to login with valid credentials
 
   Background: user is on the login page
     Given user is on the login page
 
-  @Smoke
+
   Scenario Template: User login scenario
     When user enters username "<username>"
     And user enters password "<password>"
