@@ -1,10 +1,12 @@
-
+@CENT-1393
 Feature: Surveys Functionality
+
 
   Background: User is logged in
     Given  User is logged in the application
 
-  Scenario Template: User can create a survey
+  @CENT-1384
+  Scenario Outline: User can create a survey
     When User clicks on Surveys module
     And User clicks create button
     And User enters "<Survey title>"
@@ -24,7 +26,8 @@ Feature: Surveys Functionality
       | Survey title                 | Page Title | Question Name            | choices                                                                 | choices2                                                 |
       | Group20-Collaboration Survey | Github     | What is GitHub used for? | GitHub is a code hosting platform for version control and collaboration | Github is a DevOps tool used for source code management. |
 
-  Scenario Template: Verify that user cannot create a survey without typing title (empty title)
+  @CENT-1385
+  Scenario Outline: Verify that user cannot create a survey without typing title (empty title)
     When User clicks on Surveys module
     And User clicks create button
     And User clicks add an item
@@ -36,8 +39,8 @@ Feature: Surveys Functionality
       | Page Title |
       | Github     |
 
-
-  Scenario Template: Verify that user can cancel the process by clicking Discard button
+  @CENT-1386
+  Scenario Outline: Verify that user can cancel the process by clicking Discard button
     When User clicks on Surveys module
     And User clicks create button
     And User enters "<Survey title>"
@@ -49,8 +52,8 @@ Feature: Surveys Functionality
       | Survey title                 |
       | Group20-Collaboration Survey |
 
-
-  Scenario Template: Verify that page title is changed to the new survey name after user create the survey
+@CENT-1277
+  Scenario Outline: Verify that page title is changed to the new survey name after user create the survey
     When User clicks on Surveys module
     And User clicks create button
     And User enters "<Survey title>"
@@ -60,8 +63,8 @@ Feature: Surveys Functionality
       | Survey title   | Expected Title        |  |
       | Discord Survey | Discord Survey - Odoo |  |
 
-
-  Scenario Template: Verify that “Survey created” message is displayed at the bottom of the page (after creating a new survey).
+@CENT-1388
+  Scenario Outline: Verify that “Survey created” message is displayed at the bottom of the page (after creating a new survey).
     When User clicks on Surveys module
     And User clicks create button
     And User enters "<Survey title>"
@@ -71,8 +74,8 @@ Feature: Surveys Functionality
       | Survey title              |  |
       | Team collaboration survey |  |
 
-
-  Scenario Template: Verify that user can find the new created survey under permanent survey list by using search box
+  @CENT-1389
+  Scenario Outline: Verify that user can find the new created survey under permanent survey list by using search box
     When User clicks on Surveys module
     And user clicks permanent button
     And user types in the search box "<New survey name partial>"
@@ -82,13 +85,14 @@ Feature: Surveys Functionality
       | New survey name partial |  |
       | Github                  |  |
 
-
+  @CENT-1390
   Scenario: Verify that user can change surveys display to Kanban / List
     When User clicks on Surveys module
     And User clicks on list button
     Then user clicks on kanban button
 
-  Scenario Template: Verify that the number of surveys increased 1
+  @CENT-1391
+  Scenario Outline: Verify that the number of surveys increased 1
     When User clicks on Surveys module and click list to verify number
     And User clicks create button
     And User enters "<Survey title>"

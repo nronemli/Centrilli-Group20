@@ -6,6 +6,7 @@ import com.centrilli.pages.LoginPage;
 import com.centrilli.pages.ProductsPage;
 import com.centrilli.utilities.BrowserUtil;
 import com.centrilli.utilities.Driver;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -184,5 +185,6 @@ public class InventoryFunctionality_StepDefinitions {
         Assert.assertEquals((numberOfProductBeforeCreation+1),numberOfProductAfterCreation);
 
     }
+
 
 }
