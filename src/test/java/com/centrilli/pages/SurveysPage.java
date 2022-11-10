@@ -50,16 +50,14 @@ public class SurveysPage {
     @FindBy(xpath = "(//a[@data-toggle='tab'])[3]")
     public WebElement answers;
 
-    @FindBy(xpath = "(//p)[2]")
-    public WebElement actualTitle;
-
+    @FindBy(xpath = "//*[contains(text(),'Survey created')]")
+    public WebElement surveyCreatedMsg;
     @FindBy(xpath = "//div[@class='o_notification_title']//span")
     public WebElement notificationMessageTitle;
 
     @FindBy(xpath = "//button[@accesskey='j']")
     public WebElement discardButton;
 
-   // (//div[@id='modal_34']//button[@type='button'])[2]//span
     @FindBy(xpath = "//*[contains(text(),'Ok')]")
     public WebElement okWarningButton;
 
