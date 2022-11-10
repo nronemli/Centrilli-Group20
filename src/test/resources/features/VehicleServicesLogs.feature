@@ -1,4 +1,4 @@
-
+@Regression
 @CENT-1416
 Feature: Create Vehicle Service Logs
 

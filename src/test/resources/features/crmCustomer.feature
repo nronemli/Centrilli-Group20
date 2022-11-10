@@ -1,3 +1,4 @@
+@Regression
 @CENT-1419
 Feature: As a POS Manager I should be able to create CUSTOMER
 
@@ -49,8 +50,8 @@ Examples: customer name
   | name       | expected customer name | new name     |
   | nur onemli | nur onemli             | Aynur Onemli |
 
-         @CENT-1456
-         Scenario: User can delete CUSTOMER
+  @CENT-1456
+  Scenario: User can delete CUSTOMER
     When User clicks on CRM module
     And User clicks on Customers
     And User clicks on Create button

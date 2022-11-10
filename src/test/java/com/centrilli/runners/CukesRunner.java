@@ -15,9 +15,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/centrilli/stepDefinitions",
         dryRun= false,
-        tags = "@wip"
+        tags = "@Smoke or @Regression"
 )
 public class CukesRunner {
-
 }
-

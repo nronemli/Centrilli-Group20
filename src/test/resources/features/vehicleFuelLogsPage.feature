@@ -1,3 +1,4 @@
+@Regression
 @CENT-1286
 Feature: Vehicle Fuel Logs page functionality
 

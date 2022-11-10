@@ -1,4 +1,5 @@
-  @CENT-1382
+@Regression
+@CENT-1382
   Feature: Verify that  Fleet / Configuration / Vehicle Model Function works successfully as a PosManager
 
   Background:

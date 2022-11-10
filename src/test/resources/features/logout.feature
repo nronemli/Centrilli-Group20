@@ -1,3 +1,4 @@
+@Regression
 @Smoke
 Feature: Logout Functionality
 
