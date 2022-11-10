@@ -1,4 +1,4 @@
-
+@Regression
 Feature: Fleet, Vehicles, Vehicle Odometer Function
 
   Background: User is logged in
@@ -17,9 +17,7 @@ Feature: Fleet, Vehicles, Vehicle Odometer Function
         | vehicle            | odometer value |
         | Volvo/Volvo/BTL 35 | 35             |
 
-
-
-    Scenario: Verify that user cannot create a Vehicle Odometer without selecting vehicle
+  Scenario: Verify that user cannot create a Vehicle Odometer without selecting vehicle
       When user clicks more button
       And user clicks fleet button
       And user clicks vehicle odometers button
