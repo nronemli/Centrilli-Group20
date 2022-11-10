@@ -1,4 +1,5 @@
 @CENT-1451 @Regression
+
 Feature: User should be able to verify
   that notes module works succesfully
 
