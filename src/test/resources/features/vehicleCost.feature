@@ -1,5 +1,5 @@
-
-  Feature: Vehicle Cost
+@Regression
+Feature: Vehicle Cost
 
 
     Scenario: Verify that user can create a Vehicle Cost

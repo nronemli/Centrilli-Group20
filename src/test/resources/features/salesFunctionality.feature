@@ -1,4 +1,4 @@
-
+@Regression
 @CENT-1360
 Feature: User should be able to verify
   sales functionality works succesfully as a salesmanager

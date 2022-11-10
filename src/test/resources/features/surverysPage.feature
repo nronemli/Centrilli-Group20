@@ -1,3 +1,4 @@
+@Regression
 @CENT-1393
 Feature: Surveys Functionality
 
