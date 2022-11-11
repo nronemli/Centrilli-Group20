@@ -4,6 +4,8 @@ import com.centrilli.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class PurchasesIncomingProductsPage {
 
@@ -20,17 +22,17 @@ public class PurchasesIncomingProductsPage {
     @FindBy(xpath = "//button[@accesskey='c']")
     public WebElement CreateBtn;
 
-    @FindBy(xpath = "(//input[@class='o_input ui-autocomplete-input'])[1]")
+    @FindBy(xpath = "(//div[@class='o_input_dropdown'])[1]/input")
     public WebElement SourceLocationInputBox;
 
-    @FindBy(xpath = "(//input[@class='o_input ui-autocomplete-input'])[2]")
+    @FindBy(xpath = "(//div[@class='o_input_dropdown'])[2]/input")
     public WebElement DestinationLocationInputBox;
 
 
-    @FindBy(xpath = "(//li[@class='ui-menu-item'])[3]")
+    @FindBy(xpath = "(//li[@class='ui-menu-item'])[3]/a")
     public WebElement locationsCustomer;
 
-    @FindBy(xpath = "(//input[@class='o_input ui-autocomplete-input'])[3]")
+    @FindBy(xpath = "(//div[@class='o_input_dropdown'])[3]/input")
     public WebElement ProductInputBox;
 
     @FindBy(xpath = "//button[@accesskey='s']")
@@ -39,7 +41,7 @@ public class PurchasesIncomingProductsPage {
     @FindBy(xpath = "(//span[@class='o_dropdown_button'])[1]")
     public WebElement sourceLocationDropdownBtn;
 
-    @FindBy(xpath = "(//li[@class='ui-menu-item'])[1]")
+    @FindBy(xpath = "(//li[@class='ui-menu-item'])[1]/a")
     public WebElement partnerLocationsCust;
 
     //@FindBy(xpath = "(//*[contains(text(), 'Locations/Vendors')])[1]")
@@ -48,17 +50,19 @@ public class PurchasesIncomingProductsPage {
     public WebElement partnerLocationsVendors;
 
 
-    @FindBy(xpath = "(//*[contains(text(),'Ice Cream')])[1]")
+    @FindBy(xpath = "(//li[@class='ui-menu-item'])[17]/a")
     public WebElement iceCreamProduct;
 
-    @FindBy(xpath = "//span[@class='o_field_char o_field_widget o_readonly_modifier']")
+    @FindBy(xpath = "//a[@name='product_id']")
     public WebElement verifyIceCream;
 
 
-   @FindBy(xpath = "(//button[@aria-expanded='false'])[3]/span")
+  // @FindBy(xpath = "(//button[@aria-expanded='false'])[3]/span")
+   @FindBy(xpath = "(//button[@data-toggle='dropdown'])[3]")
     public WebElement actionDropdown;
 
-   @FindBy(xpath = "(//ul[@class='dropdown-menu'])[5]")
+    // @FindBy(xpath = "(//ul[@class='dropdown-menu'])[5]")
+    @FindBy(xpath = "//ul[@class='dropdown-menu']//a[contains(text(),'Delete')]")
     public WebElement deleteBtn;
 
     @FindBy(xpath = "//button[@accesskey='l']" )
@@ -68,7 +72,8 @@ public class PurchasesIncomingProductsPage {
     public WebElement kanbanBtn;
 
 
-    @FindBy(xpath = "//div[@class='o_kanban_view o_kanban_mobile o_kanban_ungrouped']")
+
+    @FindBy(xpath = "//div[@class='o_view_manager_content']/div/div")
     public WebElement verifykanbanView;
 
     @FindBy (xpath = "//button[@accesskey='j']")
@@ -85,6 +90,9 @@ public class PurchasesIncomingProductsPage {
 
     @FindBy(xpath = "(//div[@class='table-responsive']//tbody//tr//td[5])[1]")
     public WebElement firstProductName;
+
+
+
 
 
 

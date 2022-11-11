@@ -7,12 +7,8 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 
-import java.security.Key;
 
 public class PurchasesIncomingProducts_StepDefinitions {
 
@@ -40,6 +36,7 @@ public class PurchasesIncomingProducts_StepDefinitions {
     public void userClicksOnCreateButton() {
         BrowserUtil.sleep(4);
         purchasesIncomingProductsPage.CreateBtn.click();
+        BrowserUtil.sleep(3);
 
     }
 
@@ -58,23 +55,27 @@ public class PurchasesIncomingProducts_StepDefinitions {
 
     @And("user enters Partner LocationsVendors in Destination Location input box")
     public void userEntersPartnerLocationsVendorsInDestinationLocationInputBox() {
-        BrowserUtil.sleep(2);
-        purchasesIncomingProductsPage.DestinationLocationInputBox.click();
-        BrowserUtil.sleep(5);
-       purchasesIncomingProductsPage.locationsCustomer.click();
+
+
+
+            BrowserUtil.sleep(2);
+            purchasesIncomingProductsPage.DestinationLocationInputBox.click();
+            BrowserUtil.sleep(5);
+            //BrowserUtil.waitForVisibility(purchasesIncomingProductsPage.locationsCustomer);
+            purchasesIncomingProductsPage.locationsCustomer.click();
+
+
 
 
     }
 
+  //  @And("user enters {string} in Destination Location input box")
+   // public void userEntersInDestinationLocationInputBox(String arg0) {
+    //    BrowserUtil.sleep(4);
+     //  purchasesIncomingProductsPage.DestinationLocationInputBox.sendKeys(arg0 + Keys.ENTER);
 
 
-    @And("user enters {string} in Destination Location input box")
-    public void userEntersInDestinationLocationInputBox(String arg0) {
-
-        purchasesIncomingProductsPage.DestinationLocationInputBox.sendKeys(arg0);
-        BrowserUtil.sleep(4);
-
-    }
+  //  }
 
 
     @And("user enters Product in Product input box")
@@ -88,9 +89,9 @@ public class PurchasesIncomingProducts_StepDefinitions {
 
     @Then("user clicks SAVE button")
     public void userClicksSAVEButton() {
-        BrowserUtil.sleep(2);
+        BrowserUtil.sleep(4);
         purchasesIncomingProductsPage.SaveBtn.click();
-        BrowserUtil.sleep(3);
+
 
 
 
@@ -102,14 +103,19 @@ public class PurchasesIncomingProducts_StepDefinitions {
         //purchasesIncomingProductsPage.verifyIceCream.isDisplayed();
         //Assert.assertTrue(purchasesIncomingProductsPage.verifyIceCream.isDisplayed());
         Assert.assertEquals("[13] Ice Cream",purchasesIncomingProductsPage.verifyIceCream.getText());
+        System.out.println("Driver.getDriver().getTitle() = " + Driver.getDriver().getTitle());
         System.out.println(purchasesIncomingProductsPage.verifyIceCream.getText());
         BrowserUtil.sleep(2);
+        Assert.assertTrue(Driver.getDriver().getTitle().contains("13"));
+
     }
 
     @Then("user delete created incoming product")
     public void userDeleteCreatedIncomingProduct() {
-
+       BrowserUtil.sleep(5);
+        System.out.println("purchasesIncomingProductsPage.actionDropdown.isDisplayed() = " + purchasesIncomingProductsPage.actionDropdown.isDisplayed());
         purchasesIncomingProductsPage.actionDropdown.click();
+        System.out.println("purchasesIncomingProductsPage.actionDropdown.getText() = " + purchasesIncomingProductsPage.actionDropdown.getText());
         BrowserUtil.sleep(2);
         purchasesIncomingProductsPage.deleteBtn.click();
         BrowserUtil.sleep(2);
