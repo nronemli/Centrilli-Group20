@@ -32,7 +32,7 @@ public class FleetConfigVehicleModelFuncPage {
     public WebElement makeInputBox;
 
     //@FindBy (xpath = "//button[@accesskey='s']")
-    @FindBy (xpath = "//button[@class='btn btn-primary btn-sm o_form_button_save']")
+    @FindBy (xpath = "//button[@accesskey='s']")
     public WebElement saveButton;
 
     @FindBy (xpath = "//span[.='Create']")
