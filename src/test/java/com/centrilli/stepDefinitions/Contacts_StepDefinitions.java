@@ -1,19 +1,14 @@
 package com.centrilli.stepDefinitions;
 
 import com.centrilli.pages.ContactsPage;
-import com.centrilli.pages.LoginPage;
+
 import com.centrilli.utilities.BrowserUtil;
 import com.centrilli.utilities.Driver;
-import com.sun.jna.Library;
-import com.zaxxer.sparsebits.SparseBitSet;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.bouncycastle.jcajce.provider.symmetric.IDEA;
 import org.junit.Assert;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
+
 
 public class Contacts_StepDefinitions {
 
