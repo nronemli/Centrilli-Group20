@@ -1,3 +1,5 @@
+@Regression
+@CENT-1480
 Feature: Create new Contacts
 
   AC: As a POS Manager should be able to create CONTACTS
@@ -5,7 +7,7 @@ Feature: Create new Contacts
   Background: user successfully accessed to login with valid credentials
     Given is on the home page
 
-
+@CENT-1475
   Scenario: Create a New Contact
     When user clicks on Contact button
     When user clicks on Create button
@@ -14,13 +16,14 @@ Feature: Create new Contacts
     Then verify that user can create a new contact
 
 
-    Scenario: Switch Kanban-List view
+  @CENT-1476
+  Scenario: Switch Kanban-List view
       When user clicks on Contact button
       And user clicks Kanban button
       And user clicks List button and switches the view
 
 
-
+  @CENT-1477
     Scenario: User can discard changes
 
     When user clicks on Contact button
@@ -30,7 +33,8 @@ Feature: Create new Contacts
     And user see the warning pop up message
     Then user should click Ok button
 
-
+  @Smoke
+  @CENT-1478
     Scenario: user can edit contact
       When user clicks on Contact button
       And user clicks on Create button
@@ -41,7 +45,8 @@ Feature: Create new Contacts
       And user clicks Save button
       Then user verifies that can edit the page
 
-  @project
+  @CENT-1479
+
     Scenario: user can delete contact
       When user clicks on Contact button
       And user clicks on Create button
@@ -52,7 +57,9 @@ Feature: Create new Contacts
       And user clicks Delete button
       And user see Confirmation pop up
       And user clicks Ok button(contacts)
-      Then user verifies that he is back to Contacts page
+     # Then user is back to Contacts page
+
+      And Verify that user can delete contact
 
 
 

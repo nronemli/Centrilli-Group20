@@ -66,12 +66,25 @@ public class ContactsPage {
     @FindBy(xpath = "(//a[@data-section='other'])[1]")
     public WebElement DeleteBtn;
 
-    @FindBy(xpath = "//h4[@class='modal-title']")
+   @FindBy(xpath = "//h4[@class='modal-title']")
     public WebElement ConfTitle;
 
-    @FindBy(xpath = "//div[@class='o_view_manager_content']")
-    public WebElement HomePage;
+    //@FindBy(xpath = "//div[@class='o_view_manager_content']")
+   // public WebElement HomePage;
 
-    @FindBy(xpath = "//span[@class='o_pager_limit']")
-    public WebElement beforeCounter;
+    //@FindBy(xpath = "//span[@class='o_pager_limit']")
+    //public WebElement beforeCounter;
+
+    @FindBy(xpath = "(//div[@class='modal-footer'])//span[1]")
+    public WebElement OkButton;
+
+
+    //@FindBy(xpath = "//div[@class='o_view_manager_content']")
+    //public WebElement VerifyPage;
+
+    @FindBy(xpath = "//ol[@class='breadcrumb']")
+    public WebElement ContactsPage;
+
+    // (//span[@class='o_pager_counter'])[1]
+
 }
