@@ -122,5 +122,6 @@ public class RO_StepDefinitions {
     public void userClicksOnRepairsOrdersLinkOnTheLeft() {
         roPage.repairOrdersLink.click();
         BrowserUtil.sleep(3);
+
     }
 }
