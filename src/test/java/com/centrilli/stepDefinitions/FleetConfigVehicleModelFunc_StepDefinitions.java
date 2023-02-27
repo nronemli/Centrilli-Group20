@@ -12,7 +12,7 @@ import org.openqa.selenium.Keys;
 
 import java.security.Key;
 
-public class FleetConfigVehicleModelFunc_StepDefinitions {
+public final class FleetConfigVehicleModelFunc_StepDefinitions {
 
 
 

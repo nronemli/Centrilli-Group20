@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class VehicleServicesLogs_1 {
+public class VehicleServicesLogs_1 extends BasePage {
 
     public VehicleServicesLogs_1(){
 

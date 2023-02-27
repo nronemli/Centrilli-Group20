@@ -9,13 +9,14 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         plugin = {
                 "html:target/cucumber-reports.html",
+                "rerun:target/rerun.txt",
                 "json:target/cucumber.json",
                 "me.jvt.cucumber.report.PrettyReports:target/cucumber"
         },
         features = "src/test/resources/features",
         glue = "com/centrilli/stepDefinitions",
         dryRun= false,
-        tags = "@Regression and @Smoke"
+        tags = ""
 )
 public class CukesRunner {
 }

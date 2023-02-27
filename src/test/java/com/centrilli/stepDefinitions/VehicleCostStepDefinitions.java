@@ -6,7 +6,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class VehicleCostStepDefinitions {
+public final class VehicleCostStepDefinitions {
 
     VehicleCostPage vc = new VehicleCostPage();
 

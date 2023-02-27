@@ -13,11 +13,11 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 
-public class InventoryFunctionality_StepDefinitions {
+public final class InventoryFunctionality_StepDefinitions{
 
     LoginPage loginPage = new LoginPage();
 
-    BasePage basePage = new BasePage();
+   // BasePage basePage = new BasePage();
 
     InventoryPage inventoryPage = new InventoryPage();
 
@@ -32,7 +32,7 @@ public class InventoryFunctionality_StepDefinitions {
         loginPage.login();
 
         BrowserUtil.sleep(2);
-        basePage.InventoryButton.click();
+        inventoryPage.InventoryButton.click();
 
         BrowserUtil.sleep(2);
         inventoryPage.productsHyperlink.click();

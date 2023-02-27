@@ -8,7 +8,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
-public class RepairOrders_StepDefinitions {
+public final class RepairOrders_StepDefinitions {
 
 
     RepairOrdersPage repairOrdersPage = new RepairOrdersPage();
@@ -42,6 +42,7 @@ public class RepairOrders_StepDefinitions {
 
 
     }
+
     @And("user clicks on Save button\\(repair)")
     public void userClicksOnSaveButtonRepair() {
         BrowserUtil.sleep(2);
@@ -53,44 +54,43 @@ public class RepairOrders_StepDefinitions {
     }
 
 
-
     @Then("verify that user can create repair orders")
     public void verifyThatUserCanCreateRepairOrders() {
-       BrowserUtil.sleep(2);
+        BrowserUtil.sleep(2);
         System.out.println("repairOrdersPage.verifyProductName.getText() = " + repairOrdersPage.verifyProductName.getText());
         BrowserUtil.sleep(2);
         repairOrdersPage.verifyProductName.getText();
         BrowserUtil.sleep(2);
-        Assert.assertEquals("[253] T-shirt",repairOrdersPage.verifyProductName.getText());
+        Assert.assertEquals("[253] T-shirt", repairOrdersPage.verifyProductName.getText());
     }
 
     @And("user delete repair orders")
     public void userDeleteRepairOrders() {
-       BrowserUtil.sleep(2);
-       repairOrdersPage.actionBtn.click();
-       BrowserUtil.sleep(2);
-       repairOrdersPage.deleteBtn.click();
-       BrowserUtil.sleep(2);
-       repairOrdersPage.confirmationOkBtn.click();
-       BrowserUtil.sleep(2);
+        BrowserUtil.sleep(2);
+        repairOrdersPage.actionBtn.click();
+        BrowserUtil.sleep(2);
+        repairOrdersPage.deleteBtn.click();
+        BrowserUtil.sleep(2);
+        repairOrdersPage.confirmationOkBtn.click();
+        BrowserUtil.sleep(2);
 
-       afterCount =repairOrdersPage.afterRepairOrderCount.getText();
-       BrowserUtil.sleep(2);
+        afterCount = repairOrdersPage.afterRepairOrderCount.getText();
+        BrowserUtil.sleep(2);
         System.out.println("afterCount = " + afterCount);
         BrowserUtil.sleep(3);
-        int IntAfterNumber= Integer.parseInt(repairOrdersPage.afterRepairOrderCount.getText())+1;
+        int IntAfterNumber = Integer.parseInt(repairOrdersPage.afterRepairOrderCount.getText()) + 1;
         afterCount = Integer.toString(IntAfterNumber);
-       // System.out.println("afterCount = " + afterCount);
-        Assert.assertEquals("Numbers don't match",afterCount,beforeCount);
+        // System.out.println("afterCount = " + afterCount);
+        Assert.assertEquals("Numbers don't match", afterCount, beforeCount);
 
 
     }
+
     @Then("user clicks edit button\\(repair)")
     public void userClicksEditButtonRepair() {
         BrowserUtil.sleep(4);
         repairOrdersPage.editBtn.click();
     }
-
 
 
     @Then("user edits product in Product to Repair input box")
@@ -109,7 +109,7 @@ public class RepairOrders_StepDefinitions {
         BrowserUtil.sleep(2);
         repairOrdersPage.verifyProductName.getText();
         BrowserUtil.sleep(2);
-        Assert.assertEquals("[13] Ice Cream",repairOrdersPage.verifyProductName.getText());
+        Assert.assertEquals("[13] Ice Cream", repairOrdersPage.verifyProductName.getText());
 
     }
 

@@ -1,12 +1,11 @@
 package com.centrilli.pages;
 
 import com.centrilli.utilities.Driver;
-import org.apache.xmlbeans.impl.xb.xsdschema.Public;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class VehicleOdometerPage {
+public class VehicleOdometerPage extends BasePage {
 
     public VehicleOdometerPage(){
         PageFactory.initElements(Driver.getDriver(), this);

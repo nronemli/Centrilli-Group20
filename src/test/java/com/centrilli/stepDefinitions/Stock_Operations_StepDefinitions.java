@@ -10,16 +10,16 @@ import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
-public class Stock_Operations_StepDefinitions {
+public final class Stock_Operations_StepDefinitions{
 
 
     StockOperationsPage stockOperationsPage = new StockOperationsPage();
-    BasePage basePage = new BasePage();
+    //BasePage basePage = new BasePage();
 
     @When("user clicks inventory button")
     public void user_clicks_inventory_button() {
         BrowserUtil.sleep(2);
-        basePage.InventoryButton.click();
+        stockOperationsPage.InventoryButton.click();
     }
 
     @When("user clicks transfers button")

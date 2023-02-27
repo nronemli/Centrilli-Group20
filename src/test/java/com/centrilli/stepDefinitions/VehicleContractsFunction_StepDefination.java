@@ -14,7 +14,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
-public class VehicleContractsFunction_StepDefination {
+public final class VehicleContractsFunction_StepDefination {
 
     VehicleContractsFunction vehicleContractsFunction = new VehicleContractsFunction();
 

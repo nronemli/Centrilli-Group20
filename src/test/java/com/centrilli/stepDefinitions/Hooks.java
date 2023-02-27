@@ -11,7 +11,7 @@ import com.centrilli.utilities.*;
 import io.cucumber.java.*;
 import org.openqa.selenium.*;
 
-public class Hooks {
+public final class Hooks {
 
 
     /*

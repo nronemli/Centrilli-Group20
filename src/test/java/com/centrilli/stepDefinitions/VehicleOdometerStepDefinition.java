@@ -11,10 +11,10 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 
-public class VehicleOdometerStepDefinition {
+public final class VehicleOdometerStepDefinition{
 
     VehicleOdometerPage vehicleOdometerPage = new VehicleOdometerPage();
-    BasePage basePage = new BasePage();
+    //BasePage basePage = new BasePage();
 
 
 
@@ -29,7 +29,7 @@ public class VehicleOdometerStepDefinition {
     @When("user clicks fleet button")
     public void user_clicks_fleet_button() {
         BrowserUtil.sleep(3);
-        basePage.FleetButton.click();
+        vehicleOdometerPage.FleetButton.click();
     }
 
     @When("user clicks vehicle odometers button")

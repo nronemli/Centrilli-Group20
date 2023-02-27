@@ -6,7 +6,7 @@ import com.centrilli.utilities.BrowserUtil;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class PointOfSale_StepDefinitions {
+public final class PointOfSale_StepDefinitions {
 
     PointOfSalePage pos = new PointOfSalePage();
     VehicleCostPage vehicle=new VehicleCostPage();

@@ -10,7 +10,7 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 
 
-public class Contacts_StepDefinitions {
+public final class Contacts_StepDefinitions {
 
 
     ContactsPage contactsPage = new ContactsPage();

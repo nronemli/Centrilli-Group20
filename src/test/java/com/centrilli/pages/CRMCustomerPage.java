@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 
-public class CRMCustomerPage {
+public class CRMCustomerPage extends BasePage {
 
     public CRMCustomerPage(){
         PageFactory.initElements(Driver.getDriver(),this);

@@ -11,16 +11,16 @@ import org.junit.Assert;
 import org.openqa.selenium.Keys;
 
 
-public class SurveysPage_StepDefinitions extends BasePage {
+public final class SurveysPage_StepDefinitions{
 
-    BasePage basePage = new BasePage();
+    //BasePage basePage = new BasePage();
     SurveysPage surveysPage = new SurveysPage();
 
     public String newCounter;
 
     @When("User clicks on Surveys module")
     public void user_clicks_on_surveys_module() {
-        basePage.SurveysButton.click();
+        surveysPage.SurveysButton.click();
         BrowserUtil.sleep(2);
     }
 
@@ -173,7 +173,7 @@ public class SurveysPage_StepDefinitions extends BasePage {
 
     @When("User clicks on Surveys module and click list to verify number")
     public void userClicksOnSurveysModuleAndClickListToVerifyNumber() {
-        basePage.SurveysButton.click();
+        surveysPage.SurveysButton.click();
         BrowserUtil.sleep(2);
         surveysPage.listButton.click();
         BrowserUtil.sleep(1);
@@ -186,7 +186,7 @@ public class SurveysPage_StepDefinitions extends BasePage {
     @And("user clicks surveys button")
     public void userClicksSurveysButton() {
         BrowserUtil.sleep(2);
-        basePage.SurveysButton.click();
+        surveysPage.SurveysButton.click();
     }
 
     @Then("user click list and number increased by one")

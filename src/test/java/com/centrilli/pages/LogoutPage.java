@@ -6,7 +6,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.FindBy;
 
 
-public class LogoutPage {
+public class LogoutPage extends BasePage {
     public LogoutPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }

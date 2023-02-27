@@ -1,15 +1,34 @@
 package com.centrilli.pages;
 
-import com.centrilli.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class ContactsPage {
+public class ContactsPage extends BasePage {
+
+    /*so in invisibility we have here
 
     public ContactsPage(){
 
-        PageFactory.initElements(Driver.getDriver(),this);
+    super();
+
+    inside this super we have
+
+    PageFactory.initElements(Driver.getDriver(),this);
+
+    }
+
+     */
+
+    public ContactsPage(){
+
+        //we can delete the lines between 24-33 and nothing would change
+
+        // we dont even need this constructor if we just extend to the BasePage - the basePages constructor
+        // will call the driver instance
+
+
+        // no need to do below
+        //PageFactory.initElements(Driver.getDriver(),this);
 
     }
 

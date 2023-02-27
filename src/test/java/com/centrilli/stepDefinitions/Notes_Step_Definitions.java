@@ -5,7 +5,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 
-public class Notes_Step_Definitions {
+public final class Notes_Step_Definitions {
 
     NotesPage notesPage = new NotesPage();
 

@@ -8,7 +8,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
-public class RO_StepDefinitions {
+public final class RO_StepDefinitions {
 
     ROPage roPage = new ROPage();
 

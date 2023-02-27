@@ -12,7 +12,7 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 
-public class VehicleServicesLogs_StepDefinitions1 {
+public final class VehicleServicesLogs_StepDefinitions1 {
 
     LoginPage loginPage = new LoginPage();
    VehicleServicesLogs_1 vehicleServicesLogs_1 = new VehicleServicesLogs_1();

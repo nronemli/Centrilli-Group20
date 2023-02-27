@@ -9,9 +9,9 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 
-public class VendorBill_StepDefinitions extends BasePage {
+public final class VendorBill_StepDefinitions {
 
-    BasePage basePage = new BasePage();
+    //BasePage basePage = new BasePage();
 
     PurchasesVendorBillsPage purchasesVendorBillsPage = new PurchasesVendorBillsPage();
 
@@ -21,7 +21,7 @@ public class VendorBill_StepDefinitions extends BasePage {
     public void user_clicks_on_purchases_module() {
 
         BrowserUtil.sleep(2);
-        basePage.PurchasesButton.click();
+        purchasesVendorBillsPage.PurchasesButton.click();
 
     }
 
@@ -170,8 +170,8 @@ public class VendorBill_StepDefinitions extends BasePage {
     @When("User clicks on Action drop down \\(Vendor Bills)")
     public void user_clicks_on_action_drop_down_vendor_bills() {
 
-         BrowserUtil.sleep(2);
-         purchasesVendorBillsPage.actionButton.click();
+        BrowserUtil.sleep(2);
+        purchasesVendorBillsPage.actionButton.click();
 
     }
 

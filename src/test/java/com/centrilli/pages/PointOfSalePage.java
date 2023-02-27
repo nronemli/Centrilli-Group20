@@ -10,7 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class PointOfSalePage {
+public class PointOfSalePage extends BasePage{
 
     public PointOfSalePage() {
         PageFactory.initElements(Driver.getDriver(), this);

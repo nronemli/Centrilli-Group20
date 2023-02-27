@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class VehicleContractsFunction {
+public class VehicleContractsFunction extends BasePage{
 
     public VehicleContractsFunction(){
         PageFactory.initElements(Driver.getDriver(),this);

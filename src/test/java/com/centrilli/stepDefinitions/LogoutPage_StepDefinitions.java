@@ -11,7 +11,7 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
 
-public class LogoutPage_StepDefinitions {
+public final class LogoutPage_StepDefinitions {
 
     LoginPage loginPage = new LoginPage();
     LogoutPage logoutPage = new LogoutPage();

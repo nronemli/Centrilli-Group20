@@ -11,14 +11,14 @@ import org.junit.Assert;
 import org.openqa.selenium.Keys;
 
 
-public class CRMCustomer_StepDefinitions extends BasePage {
+public final class CRMCustomer_StepDefinitions  {
 
-    BasePage basePage = new BasePage();
+   // BasePage basePage = new BasePage();
     CRMCustomerPage crmCustomerPage = new CRMCustomerPage();
     String beforeCount;
     @When("User clicks on CRM module")
     public void user_clicks_on_crm_module() {
-        basePage.CrmButton.click();
+        crmCustomerPage.CrmButton.click();
         BrowserUtil.sleep(4);
     }
 
@@ -104,7 +104,7 @@ public class CRMCustomer_StepDefinitions extends BasePage {
 
     @When("User clicks on CRM module and clicks customers")
     public void userClicksOnCRMModuleAndClicksCustomers() {
-        basePage.CrmButton.click();
+        crmCustomerPage.CrmButton.click();
         BrowserUtil.sleep(2);
         crmCustomerPage.btn_customers.click();
         BrowserUtil.sleep(3);

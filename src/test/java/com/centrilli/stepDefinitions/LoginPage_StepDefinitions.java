@@ -10,7 +10,7 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 
-public class LoginPage_StepDefinitions {
+public final class LoginPage_StepDefinitions{
 
     LoginPage loginPage = new LoginPage();
 

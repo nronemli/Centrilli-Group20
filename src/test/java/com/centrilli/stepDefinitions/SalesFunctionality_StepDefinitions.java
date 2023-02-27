@@ -16,7 +16,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.concurrent.TimeUnit;
 
 
-public class SalesFunctionality_StepDefinitions {
+public final class SalesFunctionality_StepDefinitions {
 
     SalesFunctionalityPage salesFunctionalityPage = new SalesFunctionalityPage();
 
