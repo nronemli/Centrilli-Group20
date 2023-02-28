@@ -69,7 +69,7 @@ public final class VehicleFuelLogs_StepDefinitions {
         vehicleFuelLogsPage.fuelSaveButton.click();
         BrowserUtil.waitForInvisibilityOf(vehicleFuelLogsPage.actualTitleFuel);
         Assert.assertTrue(Driver.getDriver().getTitle().contains("Audi"));
-        Driver.closeDriver();
+        //Driver.closeDriver();
 
     }
 
@@ -77,7 +77,7 @@ public final class VehicleFuelLogs_StepDefinitions {
     public void userClicksOnSaveButtonAndSeesErrorMessage() {
         vehicleFuelLogsPage.fuelSaveButton.click();
         Assert.assertTrue(vehicleFuelLogsPage.errorMessage.isDisplayed());
-        Driver.closeDriver();
+        //Driver.closeDriver();
     }
 
     @Then("User clicks on discard button and returns back fuel log page")
@@ -88,7 +88,7 @@ public final class VehicleFuelLogs_StepDefinitions {
         System.out.println("actualFuelLogTitle = " + actualFuelLogTitle);
         String expectedFuelTitle = "Vehicles Fuel Logs - Odoo";
         Assert.assertEquals(expectedFuelTitle, actualFuelLogTitle);
-        Driver.closeDriver();
+       // Driver.closeDriver();
 
     }
 
@@ -105,7 +105,7 @@ public final class VehicleFuelLogs_StepDefinitions {
         System.out.println("actualFuelLogTitle = " + actualFuelLogTitle);
         String expectedFuelTitle = "Audi/A1/ - Odoo";
         Assert.assertEquals(expectedFuelTitle, actualFuelLogTitle);
-        Driver.closeDriver();
+        //Driver.closeDriver();
     }
 
     @Then("User sees Attachment and Actions modules displayed")
@@ -113,7 +113,7 @@ public final class VehicleFuelLogs_StepDefinitions {
         BrowserUtil.waitForVisibility(vehicleFuelLogsPage.attachmentsModule);
         Assert.assertTrue(vehicleFuelLogsPage.attachmentsModule.isDisplayed());
         Assert.assertTrue(vehicleFuelLogsPage.actionsModule.isDisplayed());
-        Driver.closeDriver();
+        //Driver.closeDriver();
     }
 
     @And("User enters {string} inside vehicle fuel log searchbox")
@@ -127,7 +127,7 @@ public final class VehicleFuelLogs_StepDefinitions {
     public void userSeesDisplayed() {
         vehicleFuelLogsPage.kanbanButton.click();
         Assert.assertTrue(vehicleFuelLogsPage.kanbanViewResult.isDisplayed());
-        Driver.closeDriver();
+        //Driver.closeDriver();
     }
 
     @Given("User clicks on kanban view button")
@@ -149,7 +149,7 @@ public final class VehicleFuelLogs_StepDefinitions {
         vehicleFuelLogsPage.listViewButton.click();
         BrowserUtil.sleep(5);
         Assert.assertTrue(vehicleFuelLogsPage.listViewArea.isDisplayed());
-        Driver.closeDriver();
+        //Driver.closeDriver();
     }
 
     @Given("The user clicks on the X mark on the Vehicle label inside the Search input box")
@@ -178,7 +178,7 @@ public final class VehicleFuelLogs_StepDefinitions {
         String pageRangeAfterPrevious = vehicleFuelLogsPage.pageNumberRange.getText();
 
         Assert.assertFalse(pageNumberRangeAfterNext.equals(pageRangeAfterPrevious));
-        Driver.closeDriver();
+        //Driver.closeDriver();
     }
 
     @Given("The user clicks on the X mark on the Vehicle label inside the Search input box and sees the number of the total items")
@@ -197,7 +197,7 @@ public final class VehicleFuelLogs_StepDefinitions {
         Assert.assertTrue(vehicleFuelLogsPage.newLogsCount == vehicleFuelLogsPage.logsCount +1);
         System.out.println("vehicleFuelLogsPage.logsCount = " + vehicleFuelLogsPage.logsCount);
         System.out.println("vehicleFuelLogsPage.newLogsCount = " + vehicleFuelLogsPage.newLogsCount);
-        Driver.closeDriver();
+        //Driver.closeDriver();
 
     }
 

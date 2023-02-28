@@ -40,7 +40,7 @@ public final class LoginPage_StepDefinitions{
         String actualUserName = loginPage.userName.getText();
         System.out.println("loginPage.userName.getText() = " + loginPage.userName.getText());
         Assert.assertEquals("User name doesnt match", expectedUserName, actualUserName);
-        Driver.closeDriver();
+        //Driver.closeDriver();
     }
 
     @Then("user sees warning message displayed Wrong login password")

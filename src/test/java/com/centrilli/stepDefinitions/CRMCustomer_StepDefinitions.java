@@ -9,6 +9,8 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public final class CRMCustomer_StepDefinitions  {
@@ -18,43 +20,50 @@ public final class CRMCustomer_StepDefinitions  {
     String beforeCount;
     @When("User clicks on CRM module")
     public void user_clicks_on_crm_module() {
+
         crmCustomerPage.CrmButton.click();
         BrowserUtil.sleep(4);
     }
 
     @When("User clicks on Customers")
     public void user_clicks_on_customers() {
-        BrowserUtil.sleep(2);
+
+       BrowserUtil.sleep(2);
         crmCustomerPage.btn_customers.click();
-        BrowserUtil.sleep(4);
+       BrowserUtil.sleep(4);
     }
 
     @When("User clicks on Create button")
     public void user_clicks_on_create_button() {
-        BrowserUtil.sleep(2);
+
         crmCustomerPage.btn_create.click();
     }
 
     @When("User enters {string} name text box")
     public void user_enters_name_text_box(String string) {
+
         crmCustomerPage.txt_name.sendKeys(string);
     }
 
     @When("User enters {string} street text box")
     public void user_enters_street_text_box(String string) {
+
         crmCustomerPage.txt_address.sendKeys(string);
     }
 
     @When("User enters {string} email address text box")
     public void user_enters_email_address_text_box(String string) {
+
         crmCustomerPage.txt_email.sendKeys(string);
     }
 
     @Then("User clicks \\(Customers)save button")
     public void user_clicks_customers_save_button() {
+
         crmCustomerPage.btn_save.click();
         BrowserUtil.sleep(3);
         //using method to verify title
+
         String title= Driver.getDriver().getTitle();
         Assert.assertTrue(title.contains("nur onemli - Odoo"));
         Driver.closeDriver();
@@ -88,6 +97,8 @@ public final class CRMCustomer_StepDefinitions  {
     @Then("User is on the CRM module")
     public void userIsOnTheCRMModule() {
         Assert.assertTrue(Driver.getDriver().getTitle().contains("Customers - Odoo"));
+        System.out.println(Driver.getDriver().getTitle());
+        System.out.println("Customers - Odoo");
 
     }
 

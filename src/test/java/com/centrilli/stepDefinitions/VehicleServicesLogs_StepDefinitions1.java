@@ -54,7 +54,7 @@ public final class VehicleServicesLogs_StepDefinitions1 {
         BrowserUtil.sleep(2);
         vehicleServicesLogs_1.SaveBtn.click();
         BrowserUtil.sleep(2);
-        Driver.closeDriver();
+       // Driver.closeDriver();
     }
     @Then("user clicks Save button without selecting Vehicle and see {string}")
     public void user_clicks_save_button_without_selecting_vehicle_and_see(String string) {
@@ -64,7 +64,7 @@ public final class VehicleServicesLogs_StepDefinitions1 {
         BrowserUtil.sleep(2);
         vehicleServicesLogs_1.ErrorMsj.click();
         Assert.assertTrue(vehicleServicesLogs_1.ErrorMsj.isDisplayed());
-        Driver.closeDriver();
+      //  Driver.closeDriver();
     }
     @Then("user user clicks Discard button and see Warning message and clicks Ok Button")
     public void user_user_clicks_discard_button_and_see_warning_message_and_clicks_ok_button() {
@@ -75,7 +75,7 @@ public final class VehicleServicesLogs_StepDefinitions1 {
        vehicleServicesLogs_1.OkBtn.click();
        // Assert.assertTrue(vehicleServicesLogs_1.WarningMsj.isDisplayed());;
         BrowserUtil.sleep(2);
-        Driver.closeDriver();
+      // Driver.closeDriver();
     }
 
     @Then("User clicks the save and see the title changed to {string}")
@@ -139,7 +139,7 @@ public final class VehicleServicesLogs_StepDefinitions1 {
         vehicleServicesLogs_1.GraphBtn.click();
         Assert.assertTrue(vehicleServicesLogs_1.GraphDisplayed.isDisplayed());
         BrowserUtil.sleep(2);
-        Driver.closeDriver();
+       // Driver.closeDriver();
     }
 
 

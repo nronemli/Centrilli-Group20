@@ -99,14 +99,14 @@ public final class SurveysPage_StepDefinitions{
         String actualTitle = surveysPage.surveyCreatedMsg.getText();
         Assert.assertEquals("Survey title didnt match", actualTitle, expectedTitle);
         BrowserUtil.sleep(2);
-        Driver.closeDriver();
+        //Driver.closeDriver();
     }
 
     @Then("user clicks save button to see the error message")
     public void userClicksSaveButtonToSeeTheErrorMessage() {
         surveysPage.saveButton.click();
         Assert.assertTrue(surveysPage.notificationMessageTitle.isDisplayed());
-        Driver.closeDriver();
+        //Driver.closeDriver();
     }
 
     @And("user clicks Discard button")
@@ -125,7 +125,7 @@ public final class SurveysPage_StepDefinitions{
         String expectedTitle = "Surveys";
         String actualTitle = surveysPage.surveysTitle.getText();
         Assert.assertEquals("Title as expected", expectedTitle, actualTitle);
-        Driver.closeDriver();
+        //Driver.closeDriver();
     }
 
     @Then("User clicks save and see the title changed to {string}")
@@ -135,7 +135,7 @@ public final class SurveysPage_StepDefinitions{
         String actualTitle = Driver.getDriver().getTitle();
         System.out.println("Driver.getDriver().getTitle() = " + Driver.getDriver().getTitle());
         Assert.assertTrue(actualTitle.contains(arg0));
-        Driver.closeDriver();
+        //Driver.closeDriver();
     }
 
 
@@ -154,7 +154,7 @@ public final class SurveysPage_StepDefinitions{
         String expectedSurveyName = "What is GitHub used for?";
         String actualSurveyName = surveysPage.newSurveyName.getText();
         Assert.assertTrue(actualSurveyName.contains(expectedSurveyName));
-        Driver.closeDriver();
+       // Driver.closeDriver();
     }
 
     @And("User clicks on list button")
@@ -168,7 +168,7 @@ public final class SurveysPage_StepDefinitions{
         surveysPage.kanbanButton.click();
         surveysPage.permanantButton.click();
         Assert.assertTrue(surveysPage.permanantButton.isDisplayed());
-        Driver.closeDriver();
+        //Driver.closeDriver();
     }
 
     @When("User clicks on Surveys module and click list to verify number")
@@ -196,7 +196,7 @@ public final class SurveysPage_StepDefinitions{
         String pageCounter = surveysPage.pageCounter.getText();
         BrowserUtil.sleep(1);
         Assert.assertEquals("Numbers DONT match", newCounter,pageCounter);
-        Driver.closeDriver();
+        //Driver.closeDriver();
     }
 
     @And("User clicks save button")
